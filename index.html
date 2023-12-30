@@ -13,22 +13,25 @@
     }
 
     header {
-      background: linear-gradient(to right, #003366, #006699), url('img/cep_img.jpg') center center/cover no-repeat;
-      color: white;
-      padding: 50px;
-      text-align: center;
-      font-size: 36px;
-      position: relative;
-    }
+    background: linear-gradient(to right, #003366, #006699), url('img/cep_img.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+}
 
-    header::after {
-      content: "RS Puppis, one of the brightest known Cepheid variable stars in the Milky Way galaxy (Hubble Space Telescope)";
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      color: white;
-      font-size: 12px;
-    }
+header::after {
+    content: "RS Puppis, one of the brightest known Cepheid variable stars in the Milky Way galaxy (Hubble Space Telescope)";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 12px;
+}
 
     header h1 {
       margin-bottom: 10px; /* Adjust as needed */
