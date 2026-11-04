@@ -1,419 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mami's Journey: Exploring the Wonders of the Universe</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mami Deka is a Momentum MSCA Fellow at Konkoly Observatory, working on variable stars, stellar astrophysics, and the structure of galaxies.">
+  <meta name="theme-color" content="#101d35">
+  <title>Mami Deka | Astrophysics</title>
   <style>
-    /* Add CSS styles here */
+    :root {
+      color-scheme: light;
+      --ink: #17243b;
+      --muted: #56657a;
+      --navy: #101d35;
+      --blue: #244e78;
+      --teal: #67d5c2;
+      --paper: #f5f7fa;
+      --surface: #fff;
+      --line: #e2e8f0;
+      --shadow: 0 16px 42px rgba(16, 29, 53, .08);
+      --radius: 18px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    header {
-      background-image: url('img/cep_img.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
-      /*background-position: center center;*/
-      background-size: cover; /* This ensures the image covers the entire header */
-      color: white; /* Text color on the header */
-      text-align: center;
-      font-size: 25px;
-      padding: 150px; /* Adjust the padding as needed */
+    a { color: #155e87; text-underline-offset: .2em; }
+    a:hover { color: #087c80; }
+    a:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 3px;
     }
-    
-
-header::after {
-    content: "RS Puppis, one of the brightest known Cepheid variable stars in the Milky Way galaxy (Hubble Space Telescope)";
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    color: white;
-    font-size: 12px;
-}
-   header h1 {
-      margin-bottom: 1px; /* Adjust as needed */
+    .skip-link {
+      position: absolute; top: -4rem; left: 1rem; z-index: 20;
+      padding: .7rem 1rem; background: white; color: var(--ink); border-radius: 8px;
     }
-
-      nav {
-        background-color: #333;
-  	overflow: hidden;
-  	position: sticky;
-  	top: 0;
-      }
-      nav a {
-        float: left;
- 	display: block;
-  	color: white;
-  	text-align: center;
-  	padding: 14px 16px;
-  	text-decoration: none;
-  	font-size: 18px;
-  	font-weight: bold;
-  	transition: background-color 0.3s ease, color 0.3s ease;
-	}
-
-     nav a:hover {
-  	background-color: #2c3e50;
-  	color: #ecf0f1;
-	}
-      
-      main {
-  	padding: 20px;
- 	 max-width: 800px;
-  	margin: 0 auto;
-  	/*border-left: 1px solid #ddd;   Add left border style */
-  	/*border-right: 1px solid #ddd;  Add right border style */
-	}
-
-      
-      footer {
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        margin-top: 50px;
-      }
-      img {
-        display: block;
-        margin: 20px auto;
-        max-width: 20%;
-        height: auto;
-        border-radius: 50%;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-      }
-      h2 {
-        margin-top: 40px;
-        font-size: 28px;
-        font-weight: bold;
-        color: #003366;
-        text-align: center;
-      }
-      p {
-        font-size: 18px;
-        line-height: 1.5;
-        color: #333333;
-        margin-bottom: 20px;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        font-size: 18px;
-      }
-      ol {
-        margin: 0;
-        padding: 0;
-        font-size: 18px;
-      }
-      li {
-	/*list-style-type: none;*/
-        margin-bottom: 10px;
-        padding-left: 20px;
-        position: relative;
-      }
-      /*li::before {
-        content: "\2022";
-        color: #003366;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }*/
-      .pdf-container {
-        width: 100%;
-        height: 600px;
-        margin: 40px 0;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-      }
-      embed {
-        width: 100%;
-        height: 100%;
-      }
-       .achievement {
-        margin-bottom: 10px;
-      }
-
-      .achievement h3 {
-        margin: 0;
-        font-size: 20px;
-      }
-
-      .achievement p {
-        margin: 0;
-        font-size: 16px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mami's Journey: Exploring the Wonders of the Universe</h1>
-    </header>
-    <nav>
+    .skip-link:focus { top: 1rem; }
+    .hero {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: linear-gradient(105deg, rgba(10, 22, 43, .94), rgba(15, 36, 61, .72)), url("img/cep_img.jpg") center 48% / cover;
+    }
+    .hero-inner { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; padding: 5rem 0 4rem; }
+    .eyebrow { color: var(--teal); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .82rem; }
+    h1 { max-width: 760px; margin: .55rem 0 .45rem; font-size: clamp(2.6rem, 7vw, 4.7rem); line-height: 1.08; letter-spacing: -.04em; }
+    .hero p { max-width: 680px; color: #e5edf6; font-size: clamp(1.05rem, 2vw, 1.25rem); margin: .85rem 0 1.6rem; }
+    .hero-caption { position: absolute; right: 1rem; bottom: .7rem; margin: 0; color: #e5edf6; font-size: .72rem; text-align: right; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 46px;
+      padding: .65rem 1.1rem; border: 1px solid var(--teal); border-radius: 999px;
+      background: var(--teal); color: #102139; font-weight: 750; text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #8ce4d5; color: #102139; }
+    .button.secondary { margin-left: .5rem; border-color: rgba(255,255,255,.55); background: transparent; color: white; }
+    .button.secondary:hover { background: rgba(255,255,255,.12); }
+    .site-nav {
+      position: sticky; top: 0; z-index: 10; background: rgba(16, 29, 53, .97);
+      box-shadow: 0 5px 20px rgba(16, 29, 53, .14); backdrop-filter: blur(12px);
+    }
+    .nav-inner { width: min(1120px, 100%); margin: auto; display: flex; gap: .25rem; overflow-x: auto; padding: 0 .75rem; scrollbar-width: thin; }
+    .site-nav a { flex: 0 0 auto; padding: .9rem .75rem; color: #eef4fa; font-size: .9rem; font-weight: 650; text-decoration: none; }
+    .site-nav a:hover { color: var(--teal); }
+    main { width: min(1000px, calc(100% - 2rem)); margin: 2rem auto 4rem; }
+    section { margin: 1.2rem 0; padding: clamp(1.3rem, 4vw, 2.4rem); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    section h2 { margin: 0 0 1.1rem; color: var(--navy); font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.25; letter-spacing: -.02em; }
+    section h3 { margin: 1.5rem 0 .35rem; color: var(--blue); font-size: 1.12rem; line-height: 1.4; }
+    p { margin: .5rem 0 1rem; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 190px 1fr; gap: 2rem; align-items: start; }
+    .portrait { display: block; width: min(100%, 190px); aspect-ratio: 1; object-fit: cover; border: 5px solid white; border-radius: 50%; box-shadow: 0 8px 26px rgba(16,29,53,.16); }
+    .role { display: inline-block; margin: 0 0 .6rem; color: var(--blue); font-weight: 700; }
+    .chips { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+    .chips li { padding: .35rem .75rem; border: 1px solid #d6e5ec; border-radius: 999px; background: #f4fafb; color: #264a60; font-size: .91rem; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 1rem; margin: .5rem 0 1rem; }
+    .publication-list, .plain-list { padding-left: 1.3rem; }
+    .publication-list li, .plain-list li { margin: .85rem 0; padding-left: .25rem; color: var(--muted); }
+    .publication-list li::marker, .plain-list li::marker { color: #16877e; font-weight: 700; }
+    .timeline h3 { margin-top: 1.2rem; }
+    .timeline p { margin: .15rem 0 .9rem; }
+    .contact-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; padding: 1.25rem; background: #f2f8fa; border: 1px solid #dcecef; border-radius: 14px; }
+    .contact-card p { margin: 0; }
+    footer { padding: 1.7rem 1rem; background: var(--navy); color: #dce6f1; text-align: center; font-size: .9rem; }
+    footer p { margin: 0; color: inherit; }
+    @media (max-width: 680px) {
+      .hero { min-height: 360px; }
+      .hero-inner { width: min(100% - 2rem, 1120px); padding: 4rem 0 3.5rem; }
+      .button.secondary { margin: .65rem 0 0; }
+      .about-grid { grid-template-columns: 1fr; gap: .8rem; }
+      .portrait { width: 130px; }
+      .nav-inner { padding-inline: .35rem; }
+      .site-nav a { padding-inline: .65rem; font-size: .84rem; }
+      section { margin: .8rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Stellar astrophysics · Variable stars · Galactic structure</div>
+      <h1>Mami Deka</h1>
+      <p>Momentum MSCA Fellow at Konkoly Observatory, exploring what pulsating stars can reveal about stellar physics and the structure of galaxies.</p>
+      <a class="button" href="#about">Discover my work</a>
+      <a class="button secondary" href="CV_mami.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+    </div>
+    <p class="hero-caption">RS Puppis, a Cepheid variable star — Hubble Space Telescope</p>
+  </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
       <a href="#about">About</a>
-      <a href="#research-interests">Research Interests</a>
-      <a href="CV_mami.pdf" target="_blank">CV</a>
+      <a href="#research-interests">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#skills">Skills</a>
+      <a href="#students-supervised">Students</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <main>
-      <section id="about">
-        <img src="img/mami.jpg" alt="Your Photo">
-	<h2>Mami Deka</h2>
-        <p>Nice to meet you! I am Mami (Maw-mi), a postdoctoral researcher at INAF - Osservatorio Astronomico di Capodimonte, Naples, Italy. 
-		My research focuses on leveraging variable stars to advance our understanding of stellar properties, 
-		galaxy structures, and the Universe, in general. More specifically, it has focused 
-		on using the recently obtained archival data in conjunction with theoretical stellar
-		models to get deeper insights into the classical pulsators and their host galaxies. 
-		The classical pulsators can also be used as excellent distance indicators, as they 
-		exhibit strict period-luminosity relations (PLR). I use the PLR to decipher the 
-		three-dimensional structure of their host galaxies. 
-		<p>I've had a diverse academic journey 
-		that started with basic physics and led me to the exciting 
-		fields of astrophysics and cosmology. My  love for mathematics has been a constant 
-		and guiding force throughout my academic pursuits. I did my B.Sc. in Physics from Nalbari 
-		College, Assam, India.  After that, I did my Master's in Physics with a specialization 
-		in Astrophysics & Cosmology from Gauhati University, Assam, India. 
-		<p>I enjoy teaching 
-		and outreach, and I would like to improve my experience in these areas as I move forward. 
-		In my free time, I enjoy doing crafts like designing dresses, paintings, and making 
-		wall art. I also love exploring new places, especially to see and learn about historic architecture. 
-
-      </section>
-      <section id="research-interests">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Pulsating variable stars</li>
-          <li>Eclipsing binaries</li>
-          <li>Stellar astrophysics</li>
-	  <li>Galactic structure and evolution</li>
-	  <li>Extragalactic distances</li>
-        </ul>
-<section id="publications">
-  <h2>Publications</h2>
-  <h3><a href="https://ui.adsabs.harvard.edu/search/q=docs(library%2FF-fEvS1IT8uWKwjOOLryJw)&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank">ADS</a> |
-	  <a href="//scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=mami+deka&btnG=" target="_blaket">Google Scholar</a></h3>
-  <h3>Refereed Articles</h3>
-  <!--<ol> <li type="a">
-  </ol>-->
-
-  <ol reversed>
-	  <li>M. Marconi, R. Molinaro, V. Ripepi, G. De Somma, T. Sicignano, <strong>M. Deka</strong>, M. Di Criscienzo, E.Luongo, I. Musella, 
-		  and E. Trentin
-	    <a href="https://ui.adsabs.harvard.edu/link_gateway/2025arXiv250913552M/doi:10.48550/arXiv.2509.13552" target="_blank">New theoretical predictions on 
-			Type II Cepheids: towards a self consistent Pop. II distance scale</a>, Astronomy & Astrophysics.</li>
-	  <li>Kerdaris Kurbah,  Shashi M Kanbur, Sukanta Deb, Anupam Bhardwaj, <strong>Mami Deka</strong>,  Susmita Das, Gautam Bhuyan., Earl P. Bellinger.
-	    <a href="https://doi.org/10.1093/mnras/stae1136" target="_blank">Multiwavelength study of observed and predicted pulsation properties of 
-			first overtone Cepheids in the Magellanic Clouds</a>, Monthly Notices of the Royal Astronomical Society, 
-	    Volume 541, Issue 3, August 2025, Pages 2594–2618.</li>
-	  <li><strong>Mami Deka</strong>, Felix Ahlborn, Teresa. A. M. Braun, and Achim Weiss.
-	    <a href="https://doi.org/10.1051/0004-6361/202554292" target="_blank">Implications of a turbulent convection model for 
-			classical Cepheids</a>, Astronomy & Astrophysics, 
-	    Volume 699, A351, June 2025.</li>
-    <li><strong>Mami Deka</strong>, Earl P. Bellinger, Shashi Kanbur, Sukanta Deb, Anupam Bhardwaj, Hugh Riley Randall, Selim Kalici, Susmita Das.
-	    <a href="https://doi.org/10.1093/mnras/stae1136" target="_blank">Bridging theory and observation in stellar pulsation models: The impact of convection
-		    and metallicity on instability strip boundaries for Classical and Type-II Cepheids</a>, Monthly Notices of the Royal Astronomical Society, 
-	    Volume 530, Issue 4, June 2024, Pages 5099–5119.</li>
-    <li>Gautam Bhuyan, Sukanta Deb, Shashi Kanbur, Earl P. Bellinger, <strong>Mami Deka</strong>, Anupam Bhardwaj.
-	    <a href="https://doi.org/10.1093/mnras/stad3772" target="_blank">Geometry
-		    of the LMC based on multi-phase analysis of multi-wavelength Cepheid 
-		    light curves using OGLE-IV and Gaia DR3 data</a>, Monthly
-	    Notices of the Royal Astronomical Society, Volume 527, Issue 3, January 2024, Pages 8671–8686.</li>
-    <li>Kerdaris Kurbah, Sukanta Deb, Shashi M Kanbur, Susmita Das, 
-	    <strong>Mami Deka</strong>, Anupam Bhardwaj, Hugh Riley Randall, 
-	    Selim Kalici. 
-	    <a href="https://doi.org/10.1093/mnras/stad806" target="_blank">A 
-		    multiphase study of theoretical and observed light curves 
-		    of classical Cepheids in the Magellanic Clouds</a>, Monthly
-	    Notices of the Royal Astronomical Society, Volume 521, Issue 4, 
-	    June 2023, Pages 6034–6052.</li>
-    <li><strong>Mami Deka</strong>, Shashi M Kanbur, Sukanta Deb, Susmita Das, 
-	    Kerdaris Kurbah, Earl P Bellinger, Anupam Bhardwaj. 
-	    <a href="https://doi.org/10.1093/mnras/stac2457" target="_blank">
-		    Period-Colour and Amplitude-Colour relations for OGLE-δ 
-		    Scuti stars in the Galactic Bulge and LMC</a>, 
-	    Monthly Notices of the Royal Astronomical Society, stac2457.</li>
-    <li><strong>Mami Deka</strong>, Sukanta Deb, Kerdaris Kurbah. 
-	    <a href="https://doi.org/10.1093/mnras/stac1596" target="_blank">
-		    An MCMC approach to the three-dimensional structure of the 
-		    Milky Way bulge using OGLE-IV δ Scuti stars</a>,
-	    Monthly Notices of the Royal Astronomical Society, Volume 514, 
-	    Issue 3, August 2022, Pages 3984–3992.</li>
-  </ol>
-  <h3>Conference Proceedings</h3>
-   <ol reversed>
-   <li><strong>Mami Deka</strong>, Shashi M. Kanbur, Sukanta Deb, Susmita Das.
-   <a href="https://doi.org/10.48550/arXiv.2309.04122" target="_blank">
-   “A Study of Stellar Photosphere – Hydrogen Ionization Front Interaction in 𝛿 Scuti Stars</a></li>
-   <li>Kerdaris Kurbah, Sukanta Deb, Shashi M Kanbur, Susmita Das, <strong>Mami Deka</strong>, 
-	   Anupam Bhardwaj, Hugh Riley Randall, Selim Kalici.
-   <a href="https://doi.org/10.48550/arXiv.2309.04133" target="_blank">
-   A multiphase study of classical Cepheids in the Magellanic Clouds‑Models and Observations</a></li>
-   </ol>
-</section>
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul>
-	  <li><strong>2023</strong> Selected in the Kavli Summer Program In Astrophysics 2023: ”The lives, deaths and afterlives of interacting stars” organized by MPA, Garching, Germany</li>
-    <li><strong>2023</strong> International Travel Grant by Science and Engineering Research Board (SERB), Government of India to attend the International Astronomical Union (IAU) Symposium 376 ”At the cross-roads of astrophysics and cosmology: Period–luminosity relations in the 2020s”, Hungary</li>
-    <li><strong>2021</strong> Qualified State Level Eligibility Test (SLET) conducted by SLET Commission, Assam (PHs).</li>
-    <li><strong>2020</strong> Qualified GATE Exam conducted by Indian Institute of Technology (IITs) (PH).</li>
-    <li><strong>2020</strong> Qualified NET-LS in Physical Science conducted by Council of Scientific and Industrial Research (CSIR), India.</li>
-    <li><strong>2019</strong> Qualified NET-LS in Physical Science conducted by CSIR, with All India Rank 70.</li>
-    <li><strong>2016-2018</strong> Received NEC Merit Scholarship.</li>
-  </ul>
-</section>
-<section id="research">
-  <h2>Research Schools Attended</h2>
-  <ul>
-    <li><strong>2023</strong> Participated in the IAU International Spring School "Modern methods of cosmic distance determination" organized by Konkoly Observatory, Budapest, Hungary.</li>
-    <li><strong>2022</strong> Participated in the "7rd Indo-French Astronomy School" on "Spectroscopy, Treasures in the voxels" jointly organized by Lyon (LIO, CRAL CNRS UMR5574, UCBL1) and IUCAA in Pune, India.</li>
-  </ul>
-  <h3>Project Title</h3>
-  <p>Chemical composition of neutral gas in a distant galaxy.</p>
-  <p>Advisor: Jens-Kristian Krogager (CRAL, Lyon, France)</p>
-  <ul>
-     <li><strong>2018</strong> Participated in "Pulsar Astronomy with uGMRT Boot-Camp & Multi-Wavelength Neutron Star Workshop" at Birla Institute of Technology and Science, Pilani, Hyderabad Campus.</li>
-  </ul>
-</section>
-<section id="conferences">
-  <h2>Talks/Conferences</h2>
-  <h3>7. 42nd meeting of the Astronomical Society of India</h3>
-  <p>Indian Institute of Science (IISc), India, February, 2024</p>
-  <p>Oral Presentation:  The impact of convection and metallicity on instability strip boundaries of Classical Cepheids</p>
-  <h3>6. North East Meet of Astronomers (NEMA – IX)</h3>
-  <p>Mizoram University,Mizoram, November, 2023</p>
-  <p>Oral Presentation:  The impact of convection and metallicity on instability strip boundaries of Classical Cepheids </p>
-  <h3>5. MPA‑Kavli Summer Programme in Astrophysics</h3>
-  <p>Max Planck Institue for Astrophysics,Garching, Germany, August, 2023</p>
-  <p>Oral Presentation: A new model* for turbulent convection: Implications for Cepheid models</p>
-  <h3>4. International Astronomical Union (IAU) Symposium 376</h3>
-  <p>"At the cross-roads of astrophysics and cosmology: Period–luminosity relations in the 2020s"</p>
-  <p>Konkoly Observatory, Budapest, Hungary</p>
-  <p>Oral Presentation: A Study of Stellar Photosphere – Hydrogen Ionization Front Interaction in δ Scuti Stars</p>
-  <h3>3. 41st meeting of The Astronomical Society of India</h3>
-  <p>Indian Institute of Technology, Indore, 1-5 March, 2023</p>
-  <p>Poster Presentation: The HIF-stellar photosphere interaction theory: δ Scuti Stars</p>
-  <h3>2. 7RD INDO‑FRENCH ASTRONOMY SCHOOL ” ON ”SPECTROSCOPY, TREASURES iN THE VOXELS </h3>
-  <p>IUCAA, Pune, India, November, 2022</p>
-  <p>Oral Presentation: Chemical composition of neutral gas in a distant galaxy </p>
-  <h3>1. National Conference on Physical Science (NCPS)</h3>
-  <p>Dibrugarh University, Assam, India, April, 2022</p>
-  <p>Oral Presentation: Galecto‑Centric Distance using Galactic bulge RR‑Lyrae Stars.</p>
-</section>
-<section id="teaching">
-  <h2>Teaching Experience</h2>
-  
-  <h3>6. IUCAA Refresher Course & Summer School 2024</h3>
-  <p>Getting Started with MESA (Introduction + Hands-on Session) <br>
-    Inter-University Centre for Astronomy and Astrophysics, Pune, India<br>
-    May 2024</p>
-  
-  <h3>5. Pedagogic Workshop on Astronomy, Astrophysics, and Cosmology</h3>
-  <p>Tutorial (Introduction + Hands-on Session) on MESA<br>
-    Gauhati University, India<br>
-    January 04-10, 2024</p>
-  
-  <h3>4. Teaching Assistant - Higher Secondary Physics Laboratory</h3>
-  <p>Cotton University, India<br>
-    2023</p>
-  
-  <h3>3. Tutorial (Introduction + Hands-on Session) on MESA-RSP</h3>
-  <p>With Prof. Shashi Kanbur<br>
-    Indian Institute of Astrophysics, India<br>
-    2022</p>
-  
-  <h3>2. Postgraduate Astrophysics Tutorial</h3>
-  <p>Tutorial on MESA-RSP<br>
-    Cotton University, India<br>
-    2022</p>
-  
-  <h3>1. Teaching Assistant - Undergraduate and Higher Secondary Physics</h3>
-  <p>Nalbari College, India<br>
-    2019<br>
-    Courses: Classical Mechanics, Thermodynamics, Mathematical Physics, Laboratory Practicals (Undergraduate); Optics, Magnetism, Mathematical Physics, Laboratory Practicals (Higher Secondary)</p>
-</section>
-<section id="skills">
-  <h2>Computational Skills</h2>
-  <h3>Data Handling</h3>
-  <p>Experience in handling data from various sources including OGLE, Gaia, TESS, Kepler and ASAS-SN.</p>
-  <h3>Languages</h3>
-  <p>Python, IDL, Bash, R, and FORTRAN.</p>
-  <h3>Statistical Techniques</h3>
-  <p>Experience with MCMC, Bayesian analysis, and F-test.</p>
-  <h3>Other Tools</h3>
-  <p>Experience with MESA, Phoebe, IRAF, VOSA (SED fitting), DS9, parallel computation tools such as OpenMP and MPI, High Performance Computing cluster, machine learning, LaTeX, and MS-Office.</p>
-</section>
-<section id="students-supervised">
-  <h2>Students Supervised</h2>
-  
-  <ul class="cvhonors">
-      <li>
-      <strong>6. Krisha Soni</strong><br>
-      High School student (Co-supervised with Prof. Shashi M. Kanbur)<br>
-      The Bronx High School of Science, USA<br>
-      2023 - present
-    </li>
-    
-    <li>
-      <strong>5. Lucas Mac</strong><br>
-      High School student (Co-supervised with Prof. Shashi M. Kanbur)<br>
-      The Bronx High School of Science, USA<br>
-      2023 - present
-    </li>
-      <li>
-      <strong>4. Anurag Baruah</strong><br>
-      MSc project (Co-supervised with Dr. Sukanta Deb)<br>
-      Cotton University, India<br>
-      2022 - 2024
-    </li>
-    
-    <li>
-      <strong>3. Hugh Riley Randall</strong><br>
-      Undergraduate student (Co-supervised with Prof. Shashi M. Kanbur)<br>
-      State University of New York, USA<br>
-      2022
-    </li>
-    
-     <li>
-      <strong>2. Liza Devi </strong><br>
-      MSc project (Co-supervised with Dr. Sukanta Deb)<br>
-      Cotton University, India<br>
-      2021 - 2023
-    </li>
-    
-    <li>
-      <strong>1. Snigdha Sarmah</strong><br>
-      MSc project (Co-supervised with Dr. Sukanta Deb)<br>
-      Cotton University, India<br>
-      2021 - 2023
-    </li>
-  </ul>
-</section>
-</section>
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div>
-    Email: <a href="mailto:mamideka8@gmail.com" class="tm-link-white">mamideka8@gmail.com</a>
-  </div>
-  <div class="tm-mb-45">
-    Institute Email: <a href="mailto:phy1991009_mami@cottonuniversity.ac.in" class="tm-link-white">mami.deka@inaf.it</a>
-  </div>
-  <p>
-  <form action="mailto:mamideka8@gmail.com" method="post" enctype="text/plain">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message"></textarea><br>
-    <input type="submit" value="Send">
-  </form>
-  </p>
-</section>
-    </main>
-    <footer>
-       <ul class="list-unstyled">
-      <li>&copy; Last updated October, 2025</li>
+    </div>
+  </nav>
+  <main id="main">
+    <section id="about">
+      <div class="about-grid">
+        <img class="portrait" src="img/mami.jpg" alt="Portrait of Mami Deka" width="190" height="190">
+        <div>
+          <h2>About</h2>
+          <p class="role">Momentum MSCA Fellow · Konkoly Observatory</p>
+          <p>Nice to meet you! I am Mami (Maw-mi), an astrophysicist studying variable stars and their applications to stellar astrophysics, galaxy structure, and cosmic distances. My work combines observational data—particularly archival photometry—with theoretical stellar models to investigate classical pulsators and their host galaxies.</p>
+          <p>Classical pulsators are valuable distance indicators because they follow period–luminosity relations. I use these relations to investigate the three-dimensional structure of their host galaxies, alongside questions about pulsation, convection, and stellar properties.</p>
+          <p>My academic path began with a B.Sc. in Physics at Nalbari College and an M.Sc. in Physics, specializing in Astrophysics and Cosmology, at Gauhati University in Assam, India. I also enjoy teaching and outreach, making art, and exploring places with rich architectural history.</p>
+        </div>
+      </div>
+    </section>
+    <section id="research-interests">
+      <h2>Research interests</h2>
+      <ul class="chips">
+        <li>Pulsating variable stars</li><li>Eclipsing binaries</li><li>Stellar astrophysics</li>
+        <li>Galactic structure and evolution</li><li>Extragalactic distances</li>
       </ul>
-    </footer>
-  </body>
+    </section>
+    <section id="publications">
+      <h2>Selected publications</h2>
+      <div class="link-row">
+        <a href="https://ui.adsabs.harvard.edu/search/q=docs(library%2FF-fEvS1IT8uWKwjOOLryJw)&amp;sort=date%20desc%2C%20bibcode%20desc&amp;p_=0" target="_blank" rel="noopener">All publications on NASA ADS</a>
+        <a href="https://scholar.google.com/scholar?hl=en&amp;as_sdt=0%2C5&amp;q=mami+deka&amp;btnG=" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+      <h3>Refereed articles</h3>
+      <ol class="publication-list" reversed>
+        <li>M. Marconi, R. Molinaro, V. Ripepi, G. De Somma, T. Sicignano, <strong>M. Deka</strong>, M. Di Criscienzo, E. Luongo, I. Musella, and E. Trentin. <a href="https://ui.adsabs.harvard.edu/link_gateway/2025arXiv250913552M/doi:10.48550/arXiv.2509.13552" target="_blank" rel="noopener">New theoretical predictions on Type II Cepheids: towards a self consistent Pop. II distance scale</a>. <em>Astronomy &amp; Astrophysics.</em></li>
+        <li>K. Kurbah, S. M. Kanbur, S. Deb, A. Bhardwaj, <strong>M. Deka</strong>, S. Das, G. Bhuyan, and E. P. Bellinger. <a href="https://doi.org/10.1093/mnras/stae1136" target="_blank" rel="noopener">Multiwavelength study of observed and predicted pulsation properties of first overtone Cepheids in the Magellanic Clouds</a>. <em>Monthly Notices of the Royal Astronomical Society</em>, 541(3), 2594–2618 (2025).</li>
+        <li><strong>M. Deka</strong>, F. Ahlborn, T. A. M. Braun, and A. Weiss. <a href="https://doi.org/10.1051/0004-6361/202554292" target="_blank" rel="noopener">Implications of a turbulent convection model for classical Cepheids</a>. <em>Astronomy &amp; Astrophysics</em>, 699, A351 (2025).</li>
+        <li><strong>M. Deka</strong>, E. P. Bellinger, S. Kanbur, S. Deb, A. Bhardwaj, H. R. Randall, S. Kalici, and S. Das. <a href="https://doi.org/10.1093/mnras/stae1136" target="_blank" rel="noopener">Bridging theory and observation in stellar pulsation models: The impact of convection and metallicity on instability strip boundaries for Classical and Type-II Cepheids</a>. <em>Monthly Notices of the Royal Astronomical Society</em>, 530(4), 5099–5119 (2024).</li>
+        <li>G. Bhuyan, S. Deb, S. Kanbur, E. P. Bellinger, <strong>M. Deka</strong>, and A. Bhardwaj. <a href="https://doi.org/10.1093/mnras/stad3772" target="_blank" rel="noopener">Geometry of the LMC based on multi-phase analysis of multi-wavelength Cepheid light curves using OGLE-IV and Gaia DR3 data</a>. <em>Monthly Notices of the Royal Astronomical Society</em>, 527(3), 8671–8686 (2024).</li>
+        <li>K. Kurbah, S. Deb, S. M. Kanbur, S. Das, <strong>M. Deka</strong>, A. Bhardwaj, H. R. Randall, and S. Kalici. <a href="https://doi.org/10.1093/mnras/stad806" target="_blank" rel="noopener">A multiphase study of theoretical and observed light curves of classical Cepheids in the Magellanic Clouds</a>. <em>Monthly Notices of the Royal Astronomical Society</em>, 521(4), 6034–6052 (2023).</li>
+        <li><strong>M. Deka</strong>, S. M. Kanbur, S. Deb, S. Das, K. Kurbah, E. P. Bellinger, and A. Bhardwaj. <a href="https://doi.org/10.1093/mnras/stac2457" target="_blank" rel="noopener">Period-Colour and Amplitude-Colour relations for OGLE-δ Scuti stars in the Galactic Bulge and LMC</a>. <em>Monthly Notices of the Royal Astronomical Society</em> (2022).</li>
+        <li><strong>M. Deka</strong>, S. Deb, and K. Kurbah. <a href="https://doi.org/10.1093/mnras/stac1596" target="_blank" rel="noopener">An MCMC approach to the three-dimensional structure of the Milky Way bulge using OGLE-IV δ Scuti stars</a>. <em>Monthly Notices of the Royal Astronomical Society</em>, 514(3), 3984–3992 (2022).</li>
+      </ol>
+      <h3>Conference proceedings</h3>
+      <ol class="publication-list" reversed>
+        <li><strong>M. Deka</strong>, S. M. Kanbur, S. Deb, and S. Das. <a href="https://doi.org/10.48550/arXiv.2309.04122" target="_blank" rel="noopener">A Study of Stellar Photosphere–Hydrogen Ionization Front Interaction in δ Scuti Stars</a>.</li>
+        <li>K. Kurbah, S. Deb, S. M. Kanbur, S. Das, <strong>M. Deka</strong>, A. Bhardwaj, H. R. Randall, and S. Kalici. <a href="https://doi.org/10.48550/arXiv.2309.04133" target="_blank" rel="noopener">A multiphase study of classical Cepheids in the Magellanic Clouds—Models and Observations</a>.</li>
+      </ol>
+    </section>
+    <section id="experience" class="timeline">
+      <h2>Career highlights &amp; conferences</h2>
+      <h3>Momentum MSCA Fellow</h3>
+      <p>Konkoly Observatory</p>
+      <h3>2023 · Kavli Summer Program in Astrophysics</h3>
+      <p>Selected for “The lives, deaths and afterlives of interacting stars,” organized by the Max Planck Institute for Astrophysics, Garching, Germany.</p>
+      <h3>2023 · International Astronomical Union Symposium 376</h3>
+      <p>International travel grant from the Science and Engineering Research Board, Government of India. Oral presentation on the interaction between the stellar photosphere and hydrogen ionization front in δ Scuti stars.</p>
+      <h3>2024 · 42nd meeting of the Astronomical Society of India</h3>
+      <p>Indian Institute of Science, India. Oral presentation: “The impact of convection and metallicity on instability strip boundaries of Classical Cepheids.”</p>
+      <h3>2023 · North East Meet of Astronomers (NEMA–IX)</h3>
+      <p>Mizoram University, India. Oral presentation on the impact of convection and metallicity on instability strip boundaries of Classical Cepheids.</p>
+      <h3>2023 · MPA–Kavli Summer Programme in Astrophysics</h3>
+      <p>Max Planck Institute for Astrophysics, Garching, Germany. Oral presentation on a new turbulent-convection model and its implications for Cepheid models.</p>
+      <h3>2023 · 41st meeting of the Astronomical Society of India</h3>
+      <p>Indian Institute of Technology, Indore. Poster presentation on the HIF–stellar photosphere interaction theory in δ Scuti stars.</p>
+      <h3>2022 · Indo-French Astronomy School</h3>
+      <p>IUCAA, Pune, India. Oral presentation on the chemical composition of neutral gas in a distant galaxy.</p>
+      <h3>2022 · National Conference on Physical Science</h3>
+      <p>Dibrugarh University, Assam, India. Oral presentation on galactocentric distances using Galactic bulge RR Lyrae stars.</p>
+      <h3>Other distinctions</h3>
+      <ul class="plain-list">
+        <li>Qualified the Assam State Level Eligibility Test (2021).</li>
+        <li>Qualified GATE (2020) and CSIR-NET-LS in Physical Science (2019, 2020); All India Rank 70 in 2019.</li>
+        <li>NEC Merit Scholarship recipient (2016–2018).</li>
+      </ul>
+      <h3>Research schools</h3>
+      <ul class="plain-list">
+        <li>2023 · IAU International Spring School, “Modern Methods of Cosmic Distance Determination,” Konkoly Observatory, Budapest, Hungary.</li>
+        <li>2022 · Indo-French Astronomy School on spectroscopy, jointly organized by Lyon institutions and IUCAA.</li>
+        <li>2018 · Pulsar Astronomy with uGMRT Boot-Camp &amp; Multi-Wavelength Neutron Star Workshop, BITS Pilani, Hyderabad Campus.</li>
+      </ul>
+    </section>
+    <section id="teaching" class="timeline">
+      <h2>Teaching &amp; outreach</h2>
+      <h3>IUCAA Refresher Course &amp; Summer School (2024)</h3>
+      <p>Getting Started with MESA: introduction and hands-on session, Pune, India.</p>
+      <h3>Pedagogic Workshop on Astronomy, Astrophysics, and Cosmology (2024)</h3>
+      <p>MESA tutorial and hands-on session, Gauhati University, India.</p>
+      <h3>Teaching Assistant · Higher Secondary Physics Laboratory (2023)</h3>
+      <p>Cotton University, India.</p>
+      <h3>MESA-RSP tutorials (2022)</h3>
+      <p>Introduction and hands-on tutorial with Prof. Shashi Kanbur at the Indian Institute of Astrophysics; postgraduate astrophysics tutorial at Cotton University.</p>
+      <h3>Teaching Assistant · Physics (2019)</h3>
+      <p>Nalbari College, India. Undergraduate and higher-secondary courses included classical mechanics, thermodynamics, mathematical physics, optics, magnetism, and laboratory practicals.</p>
+    </section>
+    <section id="skills">
+      <h2>Computational skills</h2>
+      <h3>Data &amp; programming</h3>
+      <p>Experience with OGLE, Gaia, TESS, Kepler, and ASAS-SN data. Programming: Python, IDL, Bash, R, and FORTRAN.</p>
+      <h3>Methods &amp; tools</h3>
+      <p>MCMC, Bayesian analysis, F-tests, MESA, Phoebe, IRAF, VOSA (SED fitting), DS9, OpenMP, MPI, high-performance computing, machine learning, LaTeX, and Microsoft Office.</p>
+    </section>
+    <section id="students-supervised" class="timeline">
+      <h2>Students supervised</h2>
+      <h3>Krisha Soni · High school student</h3><p>Co-supervised with Prof. Shashi M. Kanbur, The Bronx High School of Science, USA (2023–present).</p>
+      <h3>Lucas Mac · High school student</h3><p>Co-supervised with Prof. Shashi M. Kanbur, The Bronx High School of Science, USA (2023–present).</p>
+      <h3>Anurag Baruah · MSc project</h3><p>Co-supervised with Dr. Sukanta Deb, Cotton University, India (2022–2024).</p>
+      <h3>Hugh Riley Randall · Undergraduate student</h3><p>Co-supervised with Prof. Shashi M. Kanbur, State University of New York, USA (2022).</p>
+      <h3>Liza Devi · MSc project</h3><p>Co-supervised with Dr. Sukanta Deb, Cotton University, India (2021–2023).</p>
+      <h3>Snigdha Sarmah · MSc project</h3><p>Co-supervised with Dr. Sukanta Deb, Cotton University, India (2021–2023).</p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <div>
+          <p><strong>Institute:</strong> <a href="mailto:mami.deka@cfsk.org">mami.deka@cfsk.org</a></p>
+          <p><strong>Personal:</strong> <a href="mailto:mamideka8@gmail.com">mamideka8@gmail.com</a></p>
+        </div>
+        <a class="button" href="mailto:mami.deka@cfsk.org?subject=Research%20enquiry">Email Mami</a>
+      </div>
+    </section>
+  </main>
+  <footer><p>© 2026 Mami Deka · Built for clarity, accessibility, and all screen sizes.</p></footer>
+</body>
 </html>
