@@ -23,50 +23,23 @@
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     a { color: #405ca3; text-underline-offset: .2em; }
     a:hover { color: #087c91; }
-    a:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 3px;
-    }
-    .skip-link {
-      position: absolute; top: -4rem; left: 1rem; z-index: 20;
-      padding: .7rem 1rem; background: white; color: var(--ink); border-radius: 8px;
-    }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .skip-link { position: absolute; top: -4rem; left: 1rem; z-index: 20; padding: .7rem 1rem; background: white; color: var(--ink); border-radius: 8px; }
     .skip-link:focus { top: 1rem; }
-    .hero {
-      position: relative;
-      min-height: 390px;
-      display: grid;
-      align-items: center;
-      overflow: hidden;
-      color: white;
-      background: linear-gradient(105deg, rgba(10, 13, 37, .95), rgba(30, 39, 82, .72)), url("img/cep_img.jpg") center 48% / cover;
-    }
+    .hero { position: relative; min-height: 390px; display: grid; align-items: center; overflow: hidden; color: white; background: linear-gradient(105deg, rgba(10, 13, 37, .95), rgba(30, 39, 82, .72)), url("img/cep_img.jpg") center 48% / cover; }
     .hero-inner { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; padding: 5rem 0 4rem; }
     .eyebrow { color: var(--gold); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .82rem; }
     h1 { max-width: 760px; margin: .55rem 0 .45rem; font-size: clamp(2.6rem, 7vw, 4.7rem); line-height: 1.08; letter-spacing: -.04em; }
     .hero p { max-width: 680px; color: #e5e9f8; font-size: clamp(1.05rem, 2vw, 1.25rem); margin: .85rem 0 1.6rem; }
     .hero-caption { position: absolute; right: 1rem; bottom: .7rem; margin: 0; color: #e5e9f8; font-size: .72rem; text-align: right; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 46px;
-      padding: .65rem 1.1rem; border: 1px solid var(--gold); border-radius: 999px;
-      background: var(--gold); color: #171d3a; font-weight: 750; text-decoration: none;
-      transition: transform .18s ease, background .18s ease;
-    }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .65rem 1.1rem; border: 1px solid var(--gold); border-radius: 999px; background: var(--gold); color: #171d3a; font-weight: 750; text-decoration: none; transition: transform .18s ease, background .18s ease; }
     .button:hover { transform: translateY(-2px); background: #ffda8b; color: #171d3a; }
     .button.secondary { margin-left: .5rem; border-color: rgba(255,255,255,.55); background: transparent; color: white; }
     .button.secondary:hover { background: rgba(255,255,255,.12); }
-    .site-nav {
-      position: sticky; top: 0; z-index: 10; background: rgba(16, 21, 47, .97);
-      box-shadow: 0 5px 20px rgba(16, 21, 47, .18); backdrop-filter: blur(12px);
-    }
+    .site-nav { position: sticky; top: 0; z-index: 10; background: rgba(16, 21, 47, .97); box-shadow: 0 5px 20px rgba(16, 21, 47, .18); backdrop-filter: blur(12px); }
     .nav-inner { width: min(1120px, 100%); margin: auto; display: flex; gap: .25rem; overflow-x: auto; padding: 0 .75rem; scrollbar-width: thin; }
     .site-nav a { flex: 0 0 auto; padding: .9rem .75rem; color: #eef0fb; font-size: .9rem; font-weight: 650; text-decoration: none; }
     .site-nav a:hover { color: var(--gold); }
@@ -120,7 +93,8 @@
       <a href="#about">About</a>
       <a href="#research-interests">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
+      <a href="#experience">Work experience</a>
+      <a href="#conferences">Conferences</a>
       <a href="#teaching">Teaching</a>
       <a href="#skills">Skills</a>
       <a href="#students-supervised">Students</a>
@@ -171,17 +145,18 @@
       </ol>
     </section>
     <section id="experience" class="timeline">
-      <h2>Career highlights &amp; conferences</h2>
+      <h2>Work experience</h2>
       <h3>Momentum MSCA Fellow · November 2026–present</h3>
-      <p>Konkoly Observatory</p>
+      <p>Konkoly Observatory.</p>
       <h3>Postdoctoral researcher · November 2024–October 2026</h3>
       <p>INAF–Osservatorio Astronomico di Capodimonte, Naples, Italy.</p>
-      <h3>2023 · Kavli Summer Program in Astrophysics</h3>
-      <p>Selected for “The lives, deaths and afterlives of interacting stars,” organized by the Max Planck Institute for Astrophysics, Garching, Germany.</p>
-      <h3>2023 · International Astronomical Union Symposium 376</h3>
-      <p>International travel grant from the Science and Engineering Research Board, Government of India. Oral presentation on the interaction between the stellar photosphere and hydrogen ionization front in δ Scuti stars.</p>
+    </section>
+    <section id="conferences" class="timeline">
+      <h2>Conferences &amp; presentations</h2>
       <h3>2024 · 42nd meeting of the Astronomical Society of India</h3>
       <p>Indian Institute of Science, India. Oral presentation: “The impact of convection and metallicity on instability strip boundaries of Classical Cepheids.”</p>
+      <h3>2023 · International Astronomical Union Symposium 376</h3>
+      <p>International travel grant from the Science and Engineering Research Board, Government of India. Oral presentation on the interaction between the stellar photosphere and hydrogen ionization front in δ Scuti stars.</p>
       <h3>2023 · North East Meet of Astronomers (NEMA–IX)</h3>
       <p>Mizoram University, India. Oral presentation on the impact of convection and metallicity on instability strip boundaries of Classical Cepheids.</p>
       <h3>2023 · MPA–Kavli Summer Programme in Astrophysics</h3>
@@ -192,8 +167,12 @@
       <p>IUCAA, Pune, India. Oral presentation on the chemical composition of neutral gas in a distant galaxy.</p>
       <h3>2022 · National Conference on Physical Science</h3>
       <p>Dibrugarh University, Assam, India. Oral presentation on galactocentric distances using Galactic bulge RR Lyrae stars.</p>
-      <h3>Other distinctions</h3>
+    </section>
+    <section id="professional-development" class="timeline">
+      <h2>Awards &amp; professional development</h2>
+      <h3>Selected distinctions</h3>
       <ul class="plain-list">
+        <li>Selected for the 2023 Kavli Summer Program in Astrophysics, “The lives, deaths and afterlives of interacting stars,” organized by the Max Planck Institute for Astrophysics, Garching, Germany.</li>
         <li>Qualified the Assam State Level Eligibility Test (2021).</li>
         <li>Qualified GATE (2020) and CSIR-NET-LS in Physical Science (2019, 2020); All India Rank 70 in 2019.</li>
         <li>NEC Merit Scholarship recipient (2016–2018).</li>
@@ -238,10 +217,10 @@
       <h2>Contact</h2>
       <div class="contact-card">
         <div>
-          <p><strong>Institute:</strong> <a href="mailto:mami.deka@cfsk.org">mami.deka@cfsk.org</a></p>
+          <p><strong>Institute:</strong> <a href="mailto:mami.deka@csfk.org">mami.deka@csfk.org</a></p>
           <p><strong>Personal:</strong> <a href="mailto:mamideka8@gmail.com">mamideka8@gmail.com</a></p>
         </div>
-        <a class="button" href="mailto:mami.deka@cfsk.org?subject=Research%20enquiry">Email Mami</a>
+        <a class="button" href="mailto:mami.deka@csfk.org?subject=Research%20enquiry">Email Mami</a>
       </div>
     </section>
   </main>
